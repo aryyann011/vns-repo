@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plan Your Stay — Explore Varanasi</title>
+  <meta name="description" content="Submit a booking request for your stay in Varanasi. Choose your room type, hotel category, and travel dates.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 36" fill="none"><path d="M10 28 L10 24 L15 24 L15 20 L20 20 L20 16 L25 16 L25 12" stroke="#111C30" stroke-width="1.4" fill="none" stroke-linejoin="round" stroke-linecap="round"/><path d="M27 12 Q30 5, 33 12" stroke="#111C30" stroke-width="1.4" fill="none" stroke-linecap="round"/><line x1="30" y1="5" x2="30" y2="2" stroke="#D68A24" stroke-width="1.5" stroke-linecap="round"/><circle cx="30" cy="1.5" r="0.8" fill="#D68A24"/><path d="M35 16 L35 13 Q37 9, 39 13 L39 16" stroke="#111C30" stroke-width="1.2" fill="none" stroke-linecap="round"/><line x1="37" y1="9" x2="37" y2="7" stroke="#D68A24" stroke-width="1.2" stroke-linecap="round"/><path d="M3 32 C12 28, 20 30, 28 29 S40 27, 50 30" stroke="#D68A24" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M5 34 C14 31, 22 33, 30 31.5 S42 30, 50 32" stroke="#D68A24" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.4"/></svg>
+        <span class="site-logo__text">Explore Varanasi</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <nav class="main-nav" id="mainNav">
+        <ul class="main-nav__list">
+          <li><a href="index.html" class="main-nav__link">Home</a></li>
+          <li><a href="heritage.html" class="main-nav__link">Heritage</a></li>
+          <li><a href="hotel-booking.html" class="main-nav__link main-nav__link--active">Hotel Booking</a></li>
+          <li><a href="gallery.html" class="main-nav__link">Gallery</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="page-header">
+        <span class="t-label page-header__label">Booking</span>
+        <h1 class="page-header__title">Plan Your Stay</h1>
+        <p class="page-header__intro">Submit a booking request for your visit to Varanasi. Select your preferred dates, room type and accommodation category.</p>
+      </div>
+
+      <div class="booking-page">
+        <div class="booking-intro">
+          <p>This form is a frontend demonstration and does not contact a hotel or create an actual reservation. No payment information is collected. Please contact accommodation providers directly to confirm availability and make a booking.</p>
+        </div>
+
+        <form id="bookingForm" class="booking-form" novalidate>
+          <!-- Guest Information -->
+          <div class="form-section">
+            <h2 class="form-section__title">Guest Information</h2>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full Name <span class="required">*</span></label>
+                <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                <span class="error-msg">Please enter your full name</span>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="your@email.com">
+                <span class="error-msg">Please enter a valid email address</span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="mobile">Mobile Number <span class="required">*</span></label>
+                <input type="tel" id="mobile" name="mobile" required placeholder="+91 98765 43210">
+                <span class="error-msg">Please enter a valid phone number</span>
+              </div>
+              <div class="form-group">
+                <label for="nationality">Nationality <span class="required">*</span></label>
+                <input type="text" id="nationality" name="nationality" required placeholder="e.g. Indian">
+                <span class="error-msg">Please enter your nationality</span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="guests">Number of Guests <span class="required">*</span></label>
+                <input type="number" id="guests" name="guests" required min="1" max="50" placeholder="2">
+                <span class="error-msg">Please enter the number of guests</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stay Details -->
+          <div class="form-section">
+            <h2 class="form-section__title">Stay Details</h2>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="checkin">Check-in Date <span class="required">*</span></label>
+                <input type="date" id="checkin" name="checkin" required>
+                <span class="error-msg">Please select a check-in date</span>
+              </div>
+              <div class="form-group">
+                <label for="checkout">Check-out Date <span class="required">*</span></label>
+                <input type="date" id="checkout" name="checkout" required>
+                <span class="error-msg">Please select a check-out date</span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="rooms">Number of Rooms <span class="required">*</span></label>
+                <input type="number" id="rooms" name="rooms" required min="1" max="20" placeholder="1">
+                <span class="error-msg">Please enter the number of rooms</span>
+              </div>
+              <div class="form-group">
+                <label for="roomType">Room Type</label>
+                <select id="roomType" name="roomType">
+                  <option value="standard">Standard Room</option>
+                  <option value="deluxe">Deluxe Room</option>
+                  <option value="premium">Premium Room</option>
+                  <option value="family">Family Room</option>
+                  <option value="suite">Suite</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="hotelCategory">Hotel Category</label>
+                <select id="hotelCategory" name="hotelCategory">
+                  <option value="budget">Budget</option>
+                  <option value="midrange">Mid-range</option>
+                  <option value="luxury">Luxury</option>
+                  <option value="heritage">Heritage Hotel</option>
+                  <option value="riverside">Riverside Accommodation</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Preferences -->
+          <div class="form-section">
+            <h2 class="form-section__title">Additional Preferences</h2>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="mealPref">Meal Preference</label>
+                <select id="mealPref" name="mealPref">
+                  <option value="none">No preference</option>
+                  <option value="vegetarian">Vegetarian</option>
+                  <option value="vegan">Vegan</option>
+                  <option value="nonveg">Non-vegetarian</option>
+                  <option value="jain">Jain</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="travelPurpose">Travel Purpose</label>
+                <select id="travelPurpose" name="travelPurpose">
+                  <option value="tourism">Tourism</option>
+                  <option value="pilgrimage">Pilgrimage</option>
+                  <option value="business">Business</option>
+                  <option value="academic">Academic / Research</option>
+                  <option value="photography">Photography</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row form-row--single">
+              <div class="form-group">
+                <label for="specialReqs">Special Requirements</label>
+                <textarea id="specialReqs" name="specialReqs" placeholder="Any special requirements or requests..."></textarea>
+              </div>
+            </div>
+            <div class="form-checkbox">
+              <input type="checkbox" id="terms" name="terms" required>
+              <label for="terms">I understand that this is a demonstration form and does not create a real hotel reservation. I agree that my information will not be stored or transmitted. <span class="required">*</span></label>
+              <span class="error-msg">Please accept the terms to continue</span>
+            </div>
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn btn--primary" style="padding:var(--s4) var(--s8)">Submit Booking Request</button>
+          </div>
+          <p class="form-disclaimer">This form is for demonstration purposes only. It does not contact any hotel, process payments, or create an actual reservation.</p>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Booking Confirmation Modal -->
+  <div id="bookingConfirmation" class="booking-confirmation">
+    <div class="booking-confirmation__card">
+      <div class="booking-confirmation__icon">&#10003;</div>
+      <h2 class="booking-confirmation__title">Request Submitted</h2>
+      <p class="booking-confirmation__text">Thank you for your booking request. Please note that this is a demonstration — no actual reservation has been made.</p>
+      <div class="booking-confirmation__details"></div>
+      <button class="btn btn--primary booking-confirmation__close">Close</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand__logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 36" fill="none"><path d="M10 28 L10 24 L15 24 L15 20 L20 20 L20 16 L25 16 L25 12" stroke="#111C30" stroke-width="1.4" fill="none" stroke-linejoin="round" stroke-linecap="round"/><path d="M27 12 Q30 5, 33 12" stroke="#111C30" stroke-width="1.4" fill="none" stroke-linecap="round"/><line x1="30" y1="5" x2="30" y2="2" stroke="#D68A24" stroke-width="1.5" stroke-linecap="round"/><circle cx="30" cy="1.5" r="0.8" fill="#D68A24"/><path d="M3 32 C12 28, 20 30, 28 29 S40 27, 50 30" stroke="#D68A24" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            <span class="footer-brand__name">Explore Varanasi</span>
+          </div>
+          <p class="footer-brand__desc">An editorial guide to one of the world's oldest living cities.</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col__title">Navigate</h4>
+          <ul><li><a href="index.html">Home</a></li><li><a href="heritage.html">Heritage</a></li><li><a href="hotel-booking.html">Hotel Booking</a></li><li><a href="gallery.html">Gallery</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col__title">Heritage</h4>
+          <ul><li><a href="dashashwamedh-ghat.html">Dashashwamedh Ghat</a></li><li><a href="kashi-vishwanath-temple.html">Kashi Vishwanath</a></li><li><a href="sarnath.html">Sarnath</a></li><li><a href="ramnagar-fort.html">Ramnagar Fort</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col__title">More</h4>
+          <ul><li><a href="assi-ghat.html">Assi Ghat</a></li><li><a href="manikarnika-ghat.html">Manikarnika Ghat</a></li><li><a href="sankat-mochan-temple.html">Sankat Mochan</a></li><li><a href="alamgir-mosque.html">Alamgir Mosque</a></li></ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Explore Varanasi — A cultural tourism publication.</p>
+        <p>Photographs sourced from Wikimedia Commons under Creative Commons licences.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
